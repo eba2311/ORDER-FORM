@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Order Form</h1>
+        </header>
+
+        <form id="orderForm">
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-qty">Qty</th>
+                            <th class="col-stock">Stock #</th>
+                            <th class="col-desc">Description</th>
+                            <th class="col-price">Price</th>
+                            <th class="col-total">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lineItems">
+                        <!-- Row 1 -->
+                        <tr>
+                            <td><input type="number" name="qty" class="qty" min="0" value="0"></td>
+                            <td><input type="text" name="stock" class="stock"></td>
+                            <td><input type="text" name="description" class="description"></td>
+                            <td><input type="number" name="price" class="price" min="0" step="0.01" value="0.00"></td>
+                            <td><input type="text" name="total" class="row-total" readonly value="0.00"></td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td><input type="number" name="qty" class="qty" min="0" value="0"></td>
+                            <td><input type="text" name="stock" class="stock"></td>
+                            <td><input type="text" name="description" class="description"></td>
+                            <td><input type="number" name="price" class="price" min="0" step="0.01" value="0.00"></td>
+                            <td><input type="text" name="total" class="row-total" readonly value="0.00"></td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td><input type="number" name="qty" class="qty" min="0" value="0"></td>
+                            <td><input type="text" name="stock" class="stock"></td>
+                            <td><input type="text" name="description" class="description"></td>
+                            <td><input type="number" name="price" class="price" min="0" step="0.01" value="0.00"></td>
+                            <td><input type="text" name="total" class="row-total" readonly value="0.00"></td>
+                        </tr>
+                        <!-- Row 4 -->
+                        <tr>
+                            <td><input type="number" name="qty" class="qty" min="0" value="0"></td>
+                            <td><input type="text" name="stock" class="stock"></td>
+                            <td><input type="text" name="description" class="description"></td>
+                            <td><input type="number" name="price" class="price" min="0" step="0.01" value="0.00"></td>
+                            <td><input type="text" name="total" class="row-total" readonly value="0.00"></td>
+                        </tr>
+                        <!-- Row 5 -->
+                        <tr>
+                            <td><input type="number" name="qty" class="qty" min="0" value="0"></td>
+                            <td><input type="text" name="stock" class="stock"></td>
+                            <td><input type="text" name="description" class="description"></td>
+                            <td><input type="number" name="price" class="price" min="0" step="0.01" value="0.00"></td>
+                            <td><input type="text" name="total" class="row-total" readonly value="0.00"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="summary-section">
+                <div class="summary-row">
+                    <label>Subtotal:</label>
+                    <input type="text" id="subtotal" readonly value="0.00">
+                </div>
+                <div class="summary-row tax-row">
+                    <label>Sales Tax:</label>
+                    <div class="tax-controls">
+                        <input type="number" id="taxRateInt" min="0" value="0" class="tax-input-small">
+                        <span>.</span>
+                        <select id="taxRateDec" class="tax-select-small">
+                            <option value="00">00</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                        </select>
+                        <span>%</span>
+                    </div>
+                    <input type="text" id="salesTax" readonly value="0.00">
+                </div>
+                <div class="summary-row">
+                    <label>Shipping:</label>
+                    <input type="number" id="shipping" min="0" step="0.01" value="0.00">
+                </div>
+                <div class="summary-row total-row">
+                    <label>Total:</label>
+                    <input type="text" id="grandTotal" readonly value="$0.00">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
