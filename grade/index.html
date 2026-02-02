@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="page-title">Exercise 2 – Grade report</h1>
+        <div class="line-separator"></div>
+
+        <table class="grade-table">
+            <thead>
+                <tr>
+                    <th style="width: 50px;">No</th>
+                    <th>Course Code</th>
+                    <th>Course Title</th>
+                    <th style="width: 80px;">ECTS</th>
+                    <th style="width: 100px;">Grade</th>
+                    <th style="width: 100px;">Grade Point</th>
+                    <th style="width: 50px;">Action</th>
+                </tr>
+            </thead>
+            <tbody id="course-list">
+                <!-- Javascript will add rows here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">
+                        <button onclick="addCourseRow()" class="add-btn">+ Add Course</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right">TOTAL</td>
+                    <td id="total-ects">0</td>
+                    <td></td>
+                    <td id="total-gp">0</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="summary-section">
+            <div class="summary-column">
+                <h3>Previous (Enter Data)</h3>
+                <div class="summary-row">
+                    <span>ECTS Taken:</span>
+                    <input type="number" id="prev-ects" value="0" min="0">
+                </div>
+                <div class="summary-row">
+                    <span>Grade Point Earned:</span>
+                    <input type="number" id="prev-gp" value="0" min="0">
+                </div>
+                <div class="summary-row"><span>SGPA:</span> <span id="prev-sgpa">0.00</span></div>
+                <div class="summary-row"><span>CGPA:</span> <span id="prev-cgpa">0.00</span></div>
+                <div class="summary-row"><span>Status:</span><span id="prev-status">-</span></div>
+            </div>
+
+            <div class="summary-column">
+                <h3>This Semester</h3>
+                <div class="summary-row"><span>ECTS Taken:</span> <span id="curr-ects">0</span></div>
+                <div class="summary-row"><span>Grade Point Earned:</span> <span id="curr-gp">0</span></div>
+                <div class="summary-row"><span>SGPA:</span> <span id="curr-sgpa">0.00</span></div>
+                <div class="summary-row"><span>CGPA:</span> <span id="curr-calculate-cgpa">0.00</span></div>
+                <div class="summary-row"><span>Status:</span> <span id="curr-status">Pass</span></div>
+            </div>
+
+            <div class="summary-column">
+                <h3>Cumulative Academic Status</h3>
+                <div class="summary-row"><span>Total ECTS Taken:</span> <span id="cum-ects">0</span></div>
+                <div class="summary-row"><span>Total Grade Point Earned:</span> <span id="cum-gp">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
